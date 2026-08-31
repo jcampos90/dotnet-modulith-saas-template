@@ -1,0 +1,30 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Billing/">
+    <Project Path="src/Billing/Billing.Application/Billing.Application.csproj" />
+    <Project Path="src/Billing/Billing.Contracts/Billing.Contracts.csproj" />
+    <Project Path="src/Billing/Billing.Domain/Billing.Domain.csproj" />
+    <Project Path="src/Billing/Billing.Infrastructure/Billing.Infrastructure.csproj" />
+    <Project Path="src/Billing/Billing.PublicApi/Billing.PublicApi.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/MySaaS.BuildingBlocks/MySaaS.BuildingBlocks.csproj" />
+  </Folder>
+  <Folder Name="/src/Features/">
+    <Project Path="src/Features/Features.Application/Features.Application.csproj" />
+    <Project Path="src/Features/Features.Contracts/Features.Contracts.csproj" />
+    <Project Path="src/Features/Features.Domain/Features.Domain.csproj" />
+    <Project Path="src/Features/Features.Infrastructure/Features.Infrastructure.csproj" />
+    <Project Path="src/Features/Features.PublicApi/Features.PublicApi.csproj" />
+  </Folder>
+  <Folder Name="/src/Identity/">
+    <Project Path="src/Identity/Identity.Application/Identity.Application.csproj" />
+    <Project Path="src/Identity/Identity.Contracts/Identity.Contracts.csproj" />
+    <Project Path="src/Identity/Identity.Domain/Identity.Domain.csproj" />
+    <Project Path="src/Identity/Identity.Infrastructure/Identity.Infrastructure.csproj" />
+    <Project Path="src/Identity/Identity.PublicApi/Identity.PublicApi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ArchitectureTests/ArchitectureTests.csproj" />
+  </Folder>
+</Solution>
