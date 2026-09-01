@@ -8,14 +8,7 @@ This project is a **modular monolith** — a single deployable unit composed of 
 
 ### Module Dependency Graph
 
-```mermaid
-graph LR
-    Identity[Identity] -->|contracts| Billing
-    Identity -->|contracts| Features
-    Billing -->|contracts| Features
-    Features -. Outbox events .-> Billing
-    Features -. Contracts reads .-> Identity
-```
+![Module Dependency Graph](docs/images/module-dependency.png)
 
 Modules only reference each other's `*.Contracts` assemblies. Domain, Infrastructure, and Application layers are never shared.
 
@@ -39,20 +32,7 @@ This flow is enforced by `LayerDependencyTests` in the test suite.
 
 Cross-module communication uses MediatR in-process events published through an outbox pattern for reliability:
 
-```mermaid
-sequenceDiagram
-    participant API as PublicApi
-    participant App as Application
-    participant DB as Database
-    participant Outbox as OutboxProcessor
-    participant Handler as Features Handler
-
-    API->>App: CreateSubscriptionCommand
-    App->>DB: Save Subscription + OutboxMessage (same transaction)
-    Outbox->>DB: Poll for unprocessed messages
-    Outbox->>Handler: Publish SubscriptionCreatedEvent
-    Handler->>DB: Create Entitlement rows
-```
+![Event Flow - Outbox Pattern](docs/images/event-flow.png)
 
 ## Project Structure
 
