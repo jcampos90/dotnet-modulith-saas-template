@@ -13,8 +13,8 @@ graph LR
     Identity[Identity] -->|contracts| Billing
     Identity -->|contracts| Features
     Billing -->|contracts| Features
-    Features -.->|events via Outbox| Billing
-    Features -.->|reads via Contracts| Identity
+    Features -. Outbox events .-> Billing
+    Features -. Contracts reads .-> Identity
 ```
 
 Modules only reference each other's `*.Contracts` assemblies. Domain, Infrastructure, and Application layers are never shared.
@@ -45,7 +45,7 @@ sequenceDiagram
     participant App as Application
     participant DB as Database
     participant Outbox as OutboxProcessor
-    participant Handler as Features.Handler
+    participant Handler as Features Handler
 
     API->>App: CreateSubscriptionCommand
     App->>DB: Save Subscription + OutboxMessage (same transaction)
