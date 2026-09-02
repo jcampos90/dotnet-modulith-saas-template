@@ -5,7 +5,7 @@ using Billing.Domain.Entities;
 using Identity.Contracts;
 using MediatR;
 
-namespace Billing.Application.Commands.CreateSubscription;
+namespace Billing.Application.Commands.Subscriptions.CreateSubscription;
 
 public class CreateSubscriptionHandler : IRequestHandler<CreateSubscriptionCommand, Result>
 {

@@ -25,4 +25,9 @@ internal sealed class IdentityService : IIdentityService
             .Select(u => new UserResult(u.Id, u.Email, u.TenantId))
             .ToListAsync();
     }
+
+    public Task<UserResult?> GetUserByEmailAsync(string email)
+    {
+        throw new NotImplementedException();
+    }
 }

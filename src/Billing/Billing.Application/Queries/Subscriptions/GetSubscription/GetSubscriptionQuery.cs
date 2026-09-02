@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace Billing.Application.Queries.GetSubscription;
+namespace Billing.Application.Queries.Subscriptions.GetSubscription;
 
 public record GetSubscriptionQuery(Guid UserId) : IRequest<SubscriptionResult?>;
 

@@ -1,3 +1,4 @@
+using Billing.Application.Queries.Subscriptions.GetSubscription;
 using NetArchTest.Rules;
 
 namespace ArchitectureTests;
@@ -23,7 +24,7 @@ public class CqrsSeparationTests
     public void Queries_Should_Not_Depend_On_Commands()
     {
         var result = Types
-            .InAssembly(typeof(Billing.Application.Queries.GetSubscription.GetSubscriptionHandler).Assembly)
+            .InAssembly(typeof(GetSubscriptionHandler).Assembly)
             .That()
             .ResideInNamespace("Billing.Application.Queries")
             .ShouldNot()

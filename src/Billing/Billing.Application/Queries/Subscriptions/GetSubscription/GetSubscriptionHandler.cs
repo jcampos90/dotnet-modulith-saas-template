@@ -1,8 +1,8 @@
+using Billing.Application.Queries.Subscriptions.GetSubscription;
 using Billing.Application.Repositories;
 using MediatR;
-using System.Data;
 
-namespace Billing.Application.Queries.GetSubscription;
+namespace Billing.Application.Queries.Subscriptions.GetSubscription;
 
 public class GetSubscriptionHandler : IRequestHandler<GetSubscriptionQuery, SubscriptionResult?>
 {
