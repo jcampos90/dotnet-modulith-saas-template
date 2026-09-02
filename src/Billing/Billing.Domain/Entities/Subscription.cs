@@ -16,6 +16,16 @@ public class Subscription : Entity<Guid>
 
     public static Subscription Create(Guid userId, Guid planId, DateTime periodEnd)
     {
+        if(userId == Guid.Empty)
+        {
+            throw new ArgumentException("UserId cannot be empty", nameof(userId));
+        }
+
+        if(planId == Guid.Empty)
+        {
+            throw new ArgumentException("PlanId cannot be empty", nameof(planId));
+        }
+
         return new Subscription
         {
             Id = Guid.NewGuid(),

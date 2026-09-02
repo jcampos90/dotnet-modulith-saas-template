@@ -20,6 +20,16 @@ public static class IdentityModuleExtensions
             cfg.RegisterServicesFromAssembly(typeof(IdentityModuleExtensions).Assembly));
 
         services.AddScoped<IIdentityService, IdentityService>();
+
+        // debugger is attached
+        if(System.Diagnostics.Debugger.IsAttached)
+        {
+            // run migrations on startup in development environment
+            using var scope = services.BuildServiceProvider().CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<IdentityDbContext>();
+            dbContext.Database.Migrate();
+        }
+
         return services;
     }
 }

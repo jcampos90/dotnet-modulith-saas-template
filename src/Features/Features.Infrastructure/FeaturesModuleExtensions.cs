@@ -16,6 +16,16 @@ public static class FeaturesModuleExtensions
 
         services.AddMediatR(cfg =>
             cfg.RegisterServicesFromAssembly(typeof(FeaturesModuleExtensions).Assembly));
+
+        // debugger is attached
+        if(System.Diagnostics.Debugger.IsAttached)
+        {
+            // run migrations on startup in development environment
+            using var scope = services.BuildServiceProvider().CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<FeaturesDbContext>();
+            dbContext.Database.Migrate();
+        }
+
         return services;
     }
 }

@@ -1,5 +1,8 @@
 <Solution>
   <Folder Name="/src/" />
+  <Folder Name="/src/Api/">
+    <Project Path="src/Api/MySaaS.Api/MySaaS.Api.csproj" />
+  </Folder>
   <Folder Name="/src/Billing/">
     <Project Path="src/Billing/Billing.Application/Billing.Application.csproj" />
     <Project Path="src/Billing/Billing.Contracts/Billing.Contracts.csproj" />
@@ -26,5 +29,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/ArchitectureTests/ArchitectureTests.csproj" />
+    <Project Path="tests/IntegrationTests/IntegrationTests.csproj" />
+    <Project Path="tests/UnitTests/UnitTests.csproj" />
   </Folder>
 </Solution>
