@@ -57,7 +57,7 @@ public class LayerDependencyTests
         var appAssemblies = new[]
         {
             //typeof(Identity.Application.Commands.CreateUser.CreateUserHandler).Assembly,
-            typeof(Billing.Application.Commands.CreateSubscription.CreateSubscriptionHandler).Assembly
+            typeof(Billing.Application.Commands.Subscriptions.CreateSubscription.CreateSubscriptionHandler).Assembly
         };
 
         foreach (var assembly in appAssemblies)

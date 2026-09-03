@@ -8,7 +8,7 @@ public class NamingTests
     public void Handlers_Should_Have_Handler_Suffix()
     {
         var result = Types
-            .InAssembly(typeof(Billing.Application.Commands.CreateSubscription.CreateSubscriptionHandler).Assembly)
+            .InAssembly(typeof(Billing.Application.Commands.Subscriptions.CreateSubscription.CreateSubscriptionHandler).Assembly)
             .That   ()
             .ImplementInterface(typeof(MediatR.IRequestHandler<,>))
             .Should()

@@ -25,7 +25,7 @@ public static class BillingModuleExtensions
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssembly(typeof(BillingModuleExtensions).Assembly);
-            cfg.RegisterServicesFromAssembly(typeof(Application.Commands.CreateSubscription.CreateSubscriptionHandler).Assembly);
+            cfg.RegisterServicesFromAssembly(typeof(Application.Commands.Subscriptions.CreateSubscription.CreateSubscriptionHandler).Assembly);
         });
 
         // debugger is attached

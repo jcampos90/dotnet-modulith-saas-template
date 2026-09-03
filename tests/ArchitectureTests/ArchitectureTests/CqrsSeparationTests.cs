@@ -9,7 +9,7 @@ public class CqrsSeparationTests
     public void Commands_Should_Not_Depend_On_Queries()
     {
         var result = Types
-            .InAssembly(typeof(Billing.Application.Commands.CreateSubscription.CreateSubscriptionHandler).Assembly)
+            .InAssembly(typeof(Billing.Application.Commands.Subscriptions.CreateSubscription.CreateSubscriptionHandler).Assembly)
             .That()
             .ResideInNamespace("Billing.Application.Commands")
             .ShouldNot()
